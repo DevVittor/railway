@@ -1,7 +1,11 @@
 import mongoose from "mongoose";
+import dotenv from "dotenv";
+dotenv.config();
+
+console.log(process.env.MONGO_URL);
 
 const conn = async () => {
-  mongoose
+  await mongoose
     .connect(process.env.MONGO_URL, {
       dbName: process.env.MONGO_NAME,
     })
